@@ -24,4 +24,6 @@ public class SecurityConstant {
 	
 	public static final String[] PUBLIC_URLS = { "**"} ;
 	
+	
+	
 }

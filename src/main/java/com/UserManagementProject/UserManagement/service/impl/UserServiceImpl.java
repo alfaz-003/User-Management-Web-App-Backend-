@@ -1,6 +1,5 @@
 package com.UserManagementProject.UserManagement.service.impl;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
@@ -131,7 +130,7 @@ public class UserServiceImpl implements UserService , UserDetailsService {
 		user.setNotLocked(true);
 		user.setRole(Role.ROLE_USER.name());
 		user.setAuthorities(Role.ROLE_USER.getAuthorities());
-		user.setProfileImgUrl(gettemporaryprofileImageUrl(username));
+		user.setProfileImgUrl(getTemporaryprofileImageUrl(username));
 		userRepository.save(user);
 		LOGGER.info("New user password "+password);
 		emailService.sendNewpasswordEmail(firstName, password, email);
@@ -162,7 +161,7 @@ public class UserServiceImpl implements UserService , UserDetailsService {
 		user.setNotLocked(isNotLocked);
 		user.setRole(getRoleEnumName(role).name());
 		user.setAuthorities(getRoleEnumName(role).getAuthorities());
-		user.setProfileImgUrl(getTemporaryProfileUrl(username));
+		user.setProfileImgUrl(getTemporaryprofileImageUrl(username));
 		userRepository.save(user);
 		saveProfileImage(user, profileImage);
 		return user;
@@ -240,8 +239,8 @@ public class UserServiceImpl implements UserService , UserDetailsService {
 		return userRepository.findUserByEmail(email);
 	}
 
-	private String gettemporaryprofileImageUrl(String username) {
-		return ServletUriComponentsBuilder.fromCurrentContextPath().path("user/image/profile/" + username).toUriString();
+	private String getTemporaryprofileImageUrl(String username) {
+		return ServletUriComponentsBuilder.fromCurrentContextPath().path(FileConstant.DEFAULT_USER_IMAGE_PATH +FileConstant.FORWARD_SLASH+username).toUriString();
 	}
 
 	private String encodePassword(String password) {
@@ -281,10 +280,6 @@ public class UserServiceImpl implements UserService , UserDetailsService {
 	}
 
 
-
-	private String getTemporaryProfileUrl(String username) {
-		return ServletUriComponentsBuilder.fromCurrentContextPath().path(FileConstant.DEFAULT_USER_IMAGE_PATH + username).toUriString() ;
-	}
 
 
 
