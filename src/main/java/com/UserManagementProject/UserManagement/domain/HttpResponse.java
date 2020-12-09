@@ -23,7 +23,7 @@ public class HttpResponse {
 	
 
 	public HttpResponse(int httpStatusCode, HttpStatus httpStatus, String reason, String message) {
-		super();
+		
 		this.httpStatusCode = httpStatusCode;
 		this.httpStatus = httpStatus;
 		this.reason = reason;
