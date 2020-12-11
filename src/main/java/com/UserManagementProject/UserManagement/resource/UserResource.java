@@ -161,7 +161,7 @@ public class UserResource extends ExceptionHandling {
     
     @GetMapping(path ="/image/profile/{username}", produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] getTempProfileImage(@PathVariable("username") String username) throws IOException {
-    	URL url = new URL(FileConstant.TEMP_PROFILE_BASE_URL + username);
+    	URL url = new URL("https://robohash.org/"+username);
     	ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
     	
     	try(InputStream inputStream = url.openStream()) {
@@ -177,7 +177,7 @@ public class UserResource extends ExceptionHandling {
     
     
     
-    @GetMapping(path = "/image/profile/{filename}" , produces = MediaType.IMAGE_JPEG_VALUE)
+    @GetMapping(path = "/image/{username}/{fileName}" , produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] getProfileImage(@PathVariable("username") String username, @PathVariable("fileName") String fileName ) throws IOException {
 		return Files.readAllBytes(Paths.get(FileConstant.USER_FOLDER + username + FileConstant.FORWARD_SLASH + fileName)); 	
     }

@@ -240,7 +240,7 @@ public class UserServiceImpl implements UserService , UserDetailsService {
 	}
 
 	private String getTemporaryprofileImageUrl(String username) {
-		return ServletUriComponentsBuilder.fromCurrentContextPath().path(FileConstant.DEFAULT_USER_IMAGE_PATH +FileConstant.FORWARD_SLASH+username).toUriString();
+		return ServletUriComponentsBuilder.fromCurrentContextPath().path("/user/image/profile/"+username).toUriString();
 	}
 
 	private String encodePassword(String password) {
@@ -275,7 +275,7 @@ public class UserServiceImpl implements UserService , UserDetailsService {
 	
 
 	private String setProfileImageurl(String username) {
-		return ServletUriComponentsBuilder.fromCurrentContextPath().path(FileConstant.USER_IMAGE_PATH + username 
+		return ServletUriComponentsBuilder.fromCurrentContextPath().path("/user/image/profile/" + username 
 				+ FileConstant.FORWARD_SLASH + username + FileConstant.DOT + FileConstant.JPG_EXTENTION).toUriString() ;
 	}
 

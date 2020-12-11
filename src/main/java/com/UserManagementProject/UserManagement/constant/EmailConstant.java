@@ -4,9 +4,9 @@ public class EmailConstant {
 	
 	public static final String SIMPLE_MAIL_TRANSFER_PROTOCOL = 	"smtps" ;
 	
-	public static final String USERNAME = "vahoraalfaz8@gmail.com" ; //your email
+	public static final String USERNAME = "" ; //your email
 	
-	public static final String PASSWORD = "alfazgmail8" ; //up given email pass
+	public static final String PASSWORD = "" ;// pass
 	
 	public static final String FROM_EMAIL = "alfazvahora009@gmail.com" ;
 	
