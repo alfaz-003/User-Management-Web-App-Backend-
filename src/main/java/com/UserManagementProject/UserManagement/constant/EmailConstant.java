@@ -6,13 +6,9 @@ public class EmailConstant {
 	
 	public static final String USERNAME = "" ; //your email
 	
-<<<<<<< HEAD
 	public static final String PASSWORD = "" ;// pass
-=======
-	public static final String PASSWORD = "" ; //up given email pass
->>>>>>> 71c177e24c264dc75553c9af0cccfe8be5c4c477
 	
-	public static final String FROM_EMAIL = "" ; //from  email
+	public static final String FROM_EMAIL = "alfazvahora009@gmail.com" ;
 	
 	public static final String CC_EMAIL = "";
 	
